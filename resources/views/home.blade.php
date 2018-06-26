@@ -84,8 +84,7 @@
                             </div>
                         </form>
                 </div>
-          </div>
-          
+            </div> 
         </div>
     </div> <!-- END MODAL -->
 </div>

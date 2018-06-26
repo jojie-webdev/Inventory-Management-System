@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-  <title>AdminLTE 2 | Starter</title>
+  <title>Inventory Management System</title>
    <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="stylesheet" href="{{asset('css/app.css')}}">
@@ -24,9 +24,9 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>I</b>MS</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Inventory</b>MS</span>
     </a>
 
     <!-- Header Navbar -->
@@ -68,6 +68,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i>Add Product</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i>Laptops</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i>Cellphones</a></li>
           </ul>

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use DB;
 
 class RegisterController extends Controller
 {
@@ -18,7 +19,15 @@ class RegisterController extends Controller
     | This controller handles the registration of new users as well as their
     | validation and creation. By default this controller uses a trait to
     | provide this functionality without requiring any additional code.
-    |
+    |$user = User::create([
+      'name'     => $data['name'],
+      'email'    => $data['email'],
+      'password' => bcrypt($data['password']),
+    ]);
+    $user
+       ->roles()
+       ->attach(Role::where('name', 'employee')->first());
+    return $user;
     */
 
     use RegistersUsers;
@@ -63,10 +72,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+        $user = User::create([
+            'name'     => $data['name'],
+            'email'    => $data['email'],
+            'password' => bcrypt($data['password']),
         ]);
+        
+        //Save role_user default type 1 = user
+        $user->role_user= DB::table('role_user')->insert(
+            ['role_id' => 1, 'user_id' => $user->id]
+        ); 
+        return $user;
+
+        $user
+           ->roles()
+           ->attach(Role::where('name', 'teller')->first());
+        return $user;
     }
 }
