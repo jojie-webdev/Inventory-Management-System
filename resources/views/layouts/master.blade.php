@@ -56,32 +56,24 @@
         </div>
       </div>
 
-      <!-- search form (Optional) -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-          <span class="input-group-btn">
-              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-              </button>
-            </span>
-        </div>
-      </form>
-      <!-- /.search form -->
-
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li><a href="#"><i class="fa fa-file"></i> <span>Posts</span></a></li>
-        
-        @can('isAdmin')
-         <li class="active"><a href="{{url('category')}}"><i class="fa fa-microchip"></i> <span>Category</span></a></li>
-        @endcan
-
-        @can('isAdmin')
-        <li><a href="#"><i class="fa fa-users"></i> <span>Manage User</span></a></li>
-        <li><a href="#"><i class="fa fa-gears"></i> <span>Settings</span></a></li>
-        @endcan
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-file" aria-hidden="true"></i>&nbsp;<span>Products</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i>Laptops</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i>Cellphones</a></li>
+          </ul>
+        </li>
+        <li><a href="#"><i class="fa fa-file"></i> <span>Users</span></a></li>
+        <li><a href="#"><i class="fa fa-file"></i> <span>Overall</span></a></li>
         <li class="">
 
            <a href="{{ route('logout') }}"
@@ -120,7 +112,7 @@
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2018 <a href="#">Company</a>.</strong> All rights reserved.
   </footer>
 </div>
 
