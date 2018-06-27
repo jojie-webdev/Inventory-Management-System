@@ -99,7 +99,8 @@
 
     <!-- Main content -->
     <section class="content container-fluid">
-        @yield('content')
+      @include('layouts.errors')
+      @yield('content')
     
     </section>
     <!-- /.content -->

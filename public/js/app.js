@@ -13897,6 +13897,11 @@ var app = new Vue({
   el: '#app'
 });
 
+// Flassmessage Edit Profile
+setTimeout(function () {
+  $('#successMessage').fadeOut('fast');
+}, 2000); // <-- time in milliseconds
+
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {

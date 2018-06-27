@@ -17,4 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Only Authenticated user can access this page!
+Route::group(['middleware' => ['auth']], function() {
+	Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('product', 'ProductController');
+});
+

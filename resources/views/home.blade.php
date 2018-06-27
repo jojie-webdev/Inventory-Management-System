@@ -1,88 +1,99 @@
 @extends('layouts.master')
 
 @section('content')
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="container">
-    <!-- ADD USER BUTTON-->
+    <!-- ADD PRODUCT BUTTON-->
     <button class="btn btn-link" data-toggle="modal" data-target="#myModal">
-        Add User
+        Add Product
     </button>
 
     <!-- TEMPORARY CONTENT -->
     @include('layouts.monthlyreport')
     @include('layouts.visitorsreport')
 
-    <!-- ADD USER FORM-->
+    <!-- ADD PRODUCT FORM-->
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                  <p class="login-box-msg" style="font-weight: bold; font-size: 20px;">Add User!</p>
+                  <p class="login-box-msg" style="font-weight: bold; font-size: 20px;">Add Product!</p>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                  <form method="POST" action="{{ route('register') }}">
-                            @csrf
+                    <form action="{{ url('product') }}" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
 
-                            <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
-                                    @if ($errors->has('name'))
-                                        <span class="invalid-feedback">
-                                            <strong>{{ $errors->first('name') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
+                        <div class="form-group row">
+                            <label for="c_name" class="col-md-4 col-form-label text-md-right">Category Name</label>
+                            <div class="col-md-6">
+                                <select class="form-control" type="text" name="c_name">
+                                    <option>Laptop</option>
+                                    <option>Cellphone</option>
+                                </select>
                             </div>
+                        </div>
 
-                            <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                    @if ($errors->has('email'))
-                                        <span class="invalid-feedback">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
+                        <div class="form-group row">
+                            <label for="p_name" class="col-md-4 col-form-label text-md-right">Product Name</label>
+                            <div class="col-md-6">
+                                <input class="form-control" type="text" name="p_name" >
                             </div>
+                        </div>
 
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                    @if ($errors->has('password'))
-                                        <span class="invalid-feedback">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
+                        <div class="form-group row">
+                            <label for="b_name" class="col-md-4 col-form-label text-md-right">Brand Name</label>
+                            <div class="col-md-6">
+                                <input class="form-control" type="text" name="b_name" >
                             </div>
+                        </div>
 
-                            <div class="form-group row">
-                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                                </div>
+                        <div class="form-group row">
+                            <label for="y_model" class="col-md-4 col-form-label text-md-right">Year Model</label>
+                            <div class="col-md-6">
+                                <input class="form-control" type="text" name="y_model" >
                             </div>
+                        </div>
 
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Submit') }}
-                                    </button>
-                                </div>
+                        <div class="form-group row">
+                            <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
+                            <div class="col-md-6">
+                                <input class="form-control" type="text" name="description" >
                             </div>
-                        </form>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="qty" class="col-md-4 col-form-label text-md-right">Quantity</label>
+                            <div class="col-md-6">
+                                <input class="form-control" type="text" name="qty" >
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="price" class="col-md-4 col-form-label text-md-right">Price</label>
+                            <div class="col-md-6">
+                                <input class="form-control" type="text" name="price" >
+                            </div>
+                        </div>      
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Submit') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div> 
         </div>

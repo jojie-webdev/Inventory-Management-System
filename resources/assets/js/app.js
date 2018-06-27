@@ -20,3 +20,10 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 const app = new Vue({
     el: '#app'
 });
+
+// Flassmessage Edit Profile
+setTimeout(function() {
+	$('#successMessage').fadeOut('fast');
+}, 2000); // <-- time in milliseconds
+	
+
