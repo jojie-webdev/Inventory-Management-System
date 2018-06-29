@@ -43,11 +43,12 @@
                     <td>{{$product->y_model}}</td>
                     <td>{{$product->description}}</td>
                     <td>{{$product->stock}}</td>
-                    <td>{{$product->price}}</td>
+                    <td><span>&#8369;</span> {{ number_format($product->price, 2) }}</td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+    <?php echo $products->render(); ?>
 </div>
 
 <!-- ADD PRODUCT FORM-->

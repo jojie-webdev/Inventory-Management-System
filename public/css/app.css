@@ -9058,8 +9058,16 @@ nav.navbar.navbar-static-top {
   height: 50px;
 }
 
+div.dataTables_paginate {
+  display: none !important;
+}
+
 .main-header .sidebar-toggle {
   padding: 13px 15px !important;
+}
+
+.total-product {
+  border-right: 1px solid #00000029;
 }
 
 .item-title {
