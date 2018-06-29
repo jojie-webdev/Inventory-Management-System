@@ -35,17 +35,24 @@ class Product extends Model
 
 	// TOTAL PRICE
 	public static function getTotalPrice() {
-	    return $query = DB::table('products')
+	    $query = DB::table('products')
 	    				->value(DB::raw("SUM(price * stock)"));
+
+	    return $total =  number_format($query, 2, '.', ',');
 	}
 	public static function getTotalPriceCellphone() {
-	    return $query = DB::table('products')
+	    $query = DB::table('products')
 	    				->where('c_name', 'Cellphone')
 	    				->value(DB::raw("SUM(price * stock)"));
+
+	    return $total =  number_format($query, 2, '.', ',');
 	}
 	public static function getTotalPriceLaptop() {
-	    return $query = DB::table('products')
+	    $query = DB::table('products')
 	    				->where('c_name', 'Laptop')
 	    				->value(DB::raw("SUM(price * stock)"));
+
+	    return $total =  number_format($query, 2, '.', ',');
+
 	}
 }
