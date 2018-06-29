@@ -6,3 +6,20 @@ $body-bg: #f5f8fa;
 $font-family-sans-serif: "Raleway", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
+nav.navbar.navbar-static-top {
+    height: 50px;
+}
+
+.main-header .sidebar-toggle {
+    padding: 13px 15px!important;
+}
+
+.item-title {
+	font-size: 18px; 
+	font-style:italic;
+}
+
+.item-total {
+	font-size: 18px; 
+}

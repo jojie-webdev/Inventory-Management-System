@@ -9054,6 +9054,23 @@ table.text-center th {
     border-left: 1px solid #d2d6de;
   }
 }
+nav.navbar.navbar-static-top {
+  height: 50px;
+}
+
+.main-header .sidebar-toggle {
+  padding: 13px 15px !important;
+}
+
+.item-title {
+  font-size: 18px;
+  font-style: italic;
+}
+
+.item-total {
+  font-size: 18px;
+}
+
 /*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors

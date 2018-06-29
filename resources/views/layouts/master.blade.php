@@ -22,7 +22,7 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="{{url('product')}}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>I</b>MS</span>
       <!-- logo for regular state and mobile devices -->
@@ -68,9 +68,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i>Add Product</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i>Laptops</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i>Cellphones</a></li>
+            <li><a href="{{ url('laptop') }}"><i class="fa fa-circle-o"></i>Laptops</a></li>
+            <li><a href="{{ url('cellphone') }}"><i class="fa fa-circle-o"></i>Cellphones</a></li>
           </ul>
         </li>
         <li><a href="#"><i class="fa fa-file"></i> <span>Users</span></a></li>

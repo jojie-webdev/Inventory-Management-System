@@ -2,24 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Product;
-use DB;
 
-class ProductController extends Controller
+class TotalProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
-
-        $products = Product::all();
-        return view('product.index', ['products' => $products]);
+        //
     }
 
     /**
@@ -40,34 +34,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user()->id;
-        $product = new Product($request->all());
-
-        //get authenticated user->id
-        $product->user_id = $user;
-
-        //increment product->id
-        $count = 1;
-        $product->each(function($val) use(&$count){
-            $val->row_count = $count;
-            $count++;
-        });
-
-        //compare category value
-        if( $product->c_name === 'Laptop') {
-            DB::table('product_category')
-                ->insert(['category_id' => 2, 'product_id' => $count, 'user_id' => $user]); 
-
-            $product->save();
-            return back()->with('message', 'Product Added Successfully!!');
-        } else {
-            DB::table('product_category')
-                ->insert(['category_id' => 1, 'product_id' => $count, 'user_id' => $user]); 
-
-            $product->save();
-            return back()->with('message', 'Product Added Successfully!!');
-        }
-
+        //
     }
 
     /**

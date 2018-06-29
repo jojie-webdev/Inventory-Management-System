@@ -19,7 +19,9 @@ Auth::routes();
 
 //Only Authenticated user can access this page!
 Route::group(['middleware' => ['auth']], function() {
-	Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('product/total', 'ProductController@total');
     Route::resource('product', 'ProductController');
+    Route::resource('laptop', 'LaptopCategoryController');
+    Route::resource('cellphone', 'CellphoneCategoryController');
 });
 
