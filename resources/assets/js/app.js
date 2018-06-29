@@ -8,6 +8,8 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import $ from 'jquery';
+import 'datatables.net';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -19,6 +21,13 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 
 const app = new Vue({
     el: '#app'
+});
+
+//Datatables 
+$(function() {
+    $('#users-table').DataTable({
+      "pagingType": "simple"
+    });
 });
 
 // Flassmessage Edit Profile

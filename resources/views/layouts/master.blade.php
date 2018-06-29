@@ -8,9 +8,16 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
   <title>Inventory Management System</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
    <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="stylesheet" href="{{asset('css/app.css')}}">
+
+
+  <!-- Datatables -->
+  <link href="https://datatables.yajrabox.com/css/datatables.bootstrap.css" rel="stylesheet">
 
 
 </head>
@@ -117,7 +124,11 @@
   </footer>
 </div>
 
-
+<script src="https://datatables.yajrabox.com/js/jquery.min.js"></script>
+<script src="https://datatables.yajrabox.com/js/bootstrap.min.js"></script>
+<script src="https://datatables.yajrabox.com/js/jquery.dataTables.min.js"></script>
+<script src="https://datatables.yajrabox.com/js/datatables.bootstrap.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="{{asset('js/app.js')}}"></script>
 
 </body>

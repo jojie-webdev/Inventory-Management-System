@@ -9071,6 +9071,10 @@ nav.navbar.navbar-static-top {
   font-size: 18px;
 }
 
+.col-md-6.total-price {
+  text-align: right;
+}
+
 /*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
